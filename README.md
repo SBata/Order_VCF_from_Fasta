@@ -11,4 +11,6 @@ fastaRef.fa -> your reference in fasta format, i.e. hg19.fa
 
 OUT.vcf -> name for the output file
 
+<b>NOTE: the vcf file and the reference file MUST have the same names for chromosomes, i.e. chromosome 1 shoule be either "chr1" in both or "1" in both</b>
+
 this is a work in progress, I need to add errors check for the input arguments
