@@ -1,4 +1,5 @@
 #!/bin/sh
+## created by Sebastiano Battaglia ##
 
 ### this tool will re-order a vcf file based on the order of the reference fasta file, it will leave the random and chUn(s) out 
 # usage
@@ -37,9 +38,9 @@ echo "Now reordering the .vcf file, it might take some time, be patient"
 echo ""
 
 for i in ${CHR[@]}
-	do
-	cat $1 | awk -v var=$(sed "/#CHROM/q" $1 | wc -l) '{if(NR>var) print}' | grep $i >> $3
-	echo "done for $i"
+do
+cat $1 | awk -v var=$(sed "/#CHROM/q" $1 | wc -l) -v var2=$i '$1 == var2 {if(NR>var) print}' >> $3
+echo "finished for $i"
 done
 
 echo ""
@@ -47,6 +48,7 @@ echo "Done reordering the vcf file"
 echo "Removing intermediate files adn variables"
 rm header.txt
 unset CHR
+unset TEMP
 
 echo ""
 echo "Finished cleaning up,the new output is in the $3 file"
