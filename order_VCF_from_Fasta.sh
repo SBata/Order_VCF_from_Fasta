@@ -48,7 +48,6 @@ echo "Done reordering the vcf file"
 echo "Removing intermediate files adn variables"
 rm header.txt
 unset CHR
-unset TEMP
 
 echo ""
 echo "Finished cleaning up,the new output is in the $3 file"
