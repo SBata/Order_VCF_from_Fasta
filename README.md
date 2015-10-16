@@ -3,7 +3,7 @@ this small script allows you to order a vcf file based on the order of the refer
 
 usage is pretty straightforward:
 
-bash order_vcf_ref.sh IN.vcf fastaRef.fa OUT.vcf
+<i>bash order_vcf_ref.sh IN.vcf fastaRef.fa OUT.vcf</i>
 
 IN.vcf -> input vcf file that you want to order
 
